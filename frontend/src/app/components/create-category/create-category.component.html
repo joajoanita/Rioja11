@@ -1,0 +1,33 @@
+<div class="circle"></div>
+<div class="circle2"></div>
+
+<section class="container form-width">
+    <div class="bg-white mt-5 shadow rounded-4 pt-5">
+        <div class="d-flex justify-content-center">
+            <h1 class="fw-bold text-center">
+                Actividades<br>
+                Paraescolares</h1>
+        </div>
+        <form class="form-singin d-flex justify-content-center mt-3" [formGroup]="categoryForm" (ngSubmit)="onSubmit()">
+            <div class="form-group form-width-input  margin fw-semibold pb-5">
+                <div *ngIf="successMessage" class="alert alert-success" role="alert">
+                    {{successMessage}}
+                </div>
+                <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                    {{errorMessage}}
+                </div>
+                <div *ngIf="warningMessage" class="alert alert-warning" role="alert">
+                    {{ warningMessage }}
+                </div>
+                <label for="nombre">Nombre:</label>
+                <input type="nombre" id="nombre" class="form-control mb-4 border-color-primary" placeholder="Actividades de Baloncesto" formControlName="nombre">
+                <label for="descripcion">Descripción:</label>
+                <input type="descripcion" id="descripcion" class="form-control mb-4 border-color-primary" placeholder="Grupo de las actividades de Baloncesto" formControlName="descripcion">
+                <button class="button-color-primary py-2 px-3 w-100 mt-4" type="submit">Crear categoría</button>
+
+                
+            </div>
+            
+        </form>
+    </div>
+</section>

@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="w-100 shadow rounded-4 mt-sm-5">
+        <div class="bg-white rounded-4 pb-5 w-100">
+            <div class="mx-5 pt-5">
+                <h1>Actualiza la categoría</h1>
+            </div>
+            <div class="mx-5 fw-semibold ">
+                <form (ngSubmit)="updateCategory()" enctype="multipart/form-data">
+                    <div *ngIf="errorMessage" class="alert alert-danger  mt-3" role="alert">
+                        {{errorMessage}}
+                    </div>
+                    <div *ngIf="successMessage" class="alert alert-success mt-3" role="alert">
+                        {{successMessage}}
+                    </div>
+                    <div class="form-group w-100">
+                        <!-- Nombre -->
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre" class="form-control" placeholder="Actividades de tenis" [(ngModel)]="category.nombre" required>
+                        <!-- Descripcion -->
+                        <label for="descripcion" class="form-label">Cuerpo de la noticia</label>
+                        <textarea id="actividadImagen" name="actividadImagen" class="form-control" placeholder="Introduce el cuerpo de la actividad" rows="4"  [(ngModel)]="category.descripcion" required></textarea>
+                    </div>
+                    <div class="d-flex justify-content-end align-items-end">
+                        <button type="submit" class="button-color-primary mt-4 p-2 ">Actualizar</button>
+                    </div>
+                </form>
+            </div>
+        </div> 
+</div>
+

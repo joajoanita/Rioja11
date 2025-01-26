@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="w-100 shadow rounded-4 mt-sm-5">
+        <div class="bg-white rounded-4 pb-5 w-100">
+            <div class="mx-5 pt-5">
+                <h1>Actualiza la actividad</h1>
+            </div>
+            <div class="mx-5 fw-semibold ">
+                <form (ngSubmit)="updateActivity()" enctype="multipart/form-data">
+                    <div *ngIf="errorMessage" class="alert alert-danger  mt-3" role="alert">
+                        {{errorMessage}}
+                    </div>
+                    <div *ngIf="successMessage" class="alert alert-success mt-3" role="alert">
+                        {{successMessage}}
+                    </div>
+                    <div class="form-group w-100">
+                        <!-- Imagen -->
+                        <label for="actividadImagen">Imágen</label>
+                        <input type="file" name="actividadImagen" placeholder="Selecciona una imagen" class="form-control" (change)="onFileSelected($event)" accept="actividadImagen/*">
+                        <!-- Titulo -->
+                        <label for="titulo">Título</label>
+                        <input type="text" name="titulo" class="form-control" placeholder="Actividades de tenis" [(ngModel)]="activity.titulo" required>
+                        <!-- Descripcion -->
+                        <label for="descripcion" class="form-label">Cuerpo de la noticia</label>
+                        <textarea id="actividadImagen" name="actividadImagen" class="form-control" placeholder="Introduce el cuerpo de la actividad" rows="15"  [(ngModel)]="activity.descripcion" required></textarea>
+                        <!-- Horario -->
+                        <label for="horario">Horario</label>
+                        <input type="text" name="horario" class="form-control" placeholder="Lunes a las 14:00 horas" [(ngModel)]="activity.horario">
+                        <!-- Etapa educativa -->
+                        <label for="etapaEducativa">Etapa educativa</label>
+                        <input type="text" name="etapaEducativa" class="form-control" placeholder="Infantil" [(ngModel)]="activity.etapaEducativa">
+                        <!-- Cuota -->
+                        <label for="cuota">Cuota</label>
+                        <input type="text" name="cuota" class="form-control" placeholder="24.99" [(ngModel)]="activity.cuota">
+                    </div>
+                    <div class="d-flex justify-content-end align-items-end">
+                        <button type="submit" class="button-color-primary mt-4 p-2 ">Actualizar</button>
+                    </div>
+                </form>
+            </div>
+        </div> 
+</div>

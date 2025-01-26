@@ -1,0 +1,45 @@
+<div class="circle"></div>
+<div class="circle2"></div>
+
+<section class="container form-width">
+    <div class="bg-white mt-5 shadow rounded-4 pt-5">
+        <div class="d-flex justify-content-center">
+            <h1 class="fw-bold text-center">
+                Actividades<br>
+                Paraescolares</h1>
+        </div>
+        <form class="form-singin d-flex justify-content-center mt-3" [formGroup]="activityForm" (ngSubmit)="onSubmit()">
+            <div class="form-group form-width-input  margin fw-semibold pb-5">
+                <div *ngIf="successMessage" class="alert alert-success" role="alert">
+                    {{successMessage}}
+                </div>
+                <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                    {{errorMessage}}
+                </div>
+                <div *ngIf="warningMessage" class="alert alert-warning" role="alert">
+                    {{ warningMessage }}
+                </div>
+                <label for="imagenActividad">Imagen:</label>
+                <input type="file" id="imagenActividad" class="form-control mb-4 border-color-primary" formControlName="imagenActividad" placeholder="Selecciona una imagen" (change)="onFileSelected($event)">
+                <label for="titulo">Titulo:</label>
+                <input type="text" id="titulo" class="form-control mb-4 border-color-primary" placeholder="Actividades de Baloncesto" formControlName="titulo">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" class="form-control mb-4 border-color-primary" placeholder="Estas son las actividades de Baloncesto" formControlName="descripcion"></textarea>
+                <label for="text">Horario:</label>
+                <input type="horario" id="horario" class="form-control mb-4 border-color-primary" placeholder="Lunes a las 13:00 horas" formControlName="horario">
+                <label for="cuota">Cuota:</label>
+                <input type="text" id="cuota" class="form-control mb-4 border-color-primary" placeholder="50.00" formControlName="cuota">
+                <label for="cuota">Categoría:</label>
+                <select formControlName="categorias" [(ngModel)]="selectedCategory" class="form-select border-color-primary mb-4" aria-label="Selecciona una categoría">
+                    <option *ngFor="let category of categories" [value]="category.nombre">{{ category.nombre }}</option>
+                </select>
+                <label for="etapaEducativa">Etapa educativa:</label>
+                <input type="etapaEducativa" id="etapaEducativa" class="form-control mb-4 border-color-primary" placeholder="Bachillerato" formControlName="etapaEducativa" (change)="onFileSelected($event)">
+                <button class="button-color-primary py-2 px-3 w-100 mt-4" type="submit">Crear actividad</button>
+
+                
+            </div>
+            
+        </form>
+    </div>
+</section>

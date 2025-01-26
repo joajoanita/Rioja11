@@ -1,0 +1,32 @@
+.pagination-spreads::ng-deep li {
+    background-color: #1400A9;
+    border-radius: 5px;
+}
+  
+.pagination-spreads::ng-deep ul > li.disabled {
+    display: none !important;
+}
+
+.pagination-spreads::ng-deep ul > li:not(.active) > a {
+    background-color: #F1F1F1;
+    border-color: black !important;
+    color: black;
+}
+
+.image-size{
+    display: none;
+}
+
+
+@media screen and (max-width: 720px){
+    .showIt{
+        display:none !important;
+    }
+    .image-size{
+        display: flex;
+        width: 30%;
+        height: auto;
+        justify-content: start;
+    }
+}
+

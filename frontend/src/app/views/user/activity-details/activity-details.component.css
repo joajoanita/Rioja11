@@ -1,0 +1,29 @@
+.height-img{
+    height: 200px;
+    object-fit: cover;
+}
+
+.button-width{
+    width: 92.3% !important;
+}
+
+
+@media (max-width:991px) {
+    .tag-width{
+        display: flex;
+        width: 100% !important;
+    }
+
+    
+    
+}
+
+@media screen and (max-width:768px){
+    .tag-width{
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    .button-width{
+        width: 87% !important;
+    }
+}

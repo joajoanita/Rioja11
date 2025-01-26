@@ -1,0 +1,149 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+:root{
+    /* Colors */
+    --body-color: #F1F1F1;
+    --geometric-forms-color: #E4E0FF;
+    --button-color: #1400A9;
+    --button-hover-color: #0F007C;
+    --main-color: #1400A9;
+    --second-color: #606060;
+
+
+    /* Fonts */
+    --main-font: "Lexend Deca", serif;
+}
+
+html{
+    min-height: 100%;
+    position: relative;
+    
+}
+
+body{
+    font-family: var(--main-font) !important;
+    background-color: var(--body-color) !important;
+    overflow-x: hidden;
+   
+}
+
+.button-color-primary{
+    background-color: var(--button-color) !important;
+    color: white !important; 
+    padding: 3px 3px;
+    border-radius: 10px;
+    border: 3px solid var(--button-color) !important;
+}
+
+.button-color-primary:hover{
+    border: 2px solid var(--button-hover-color);
+    background-color: var(--button-hover-color);
+    transition: all ease 0.3s;
+}
+
+.button-color-secondary{
+    border: 3px solid var(--button-color) !important;
+    color: var(--button-color);;
+    background-color: transparent;
+    padding: 3px 3px;
+    border-radius: 10px;
+    
+}
+
+.button-color-secondary:hover{
+    border: 2px solid var(--button-hover-color);
+    color: var(--button-hover-color);
+    transition: all ease 0.3s;
+}
+
+.horario-color{
+    color: var(--second-color);
+}
+
+.border-color-primary{
+    border: 2px solid var(--button-color) !important;
+}
+
+.tag{
+    background-color: var(--button-color);
+    color: white;
+    border: 2px solid var(--button-color);
+    border-radius: 10px;
+}
+
+.circle{
+    background-color: var(--geometric-forms-color);
+    width: 1000px;
+    height: 1000px;
+    position:absolute;
+    top: -200px;
+    z-index: -1;
+    left: -200px;
+    border-radius: 50%;
+    border: 3px solid var(--geometric-forms-color);
+}
+
+.circle2 {
+    background-color: var(--geometric-forms-color);
+    width: 700px;
+    height: 600px;
+    position: absolute;
+    top: 328px;
+    z-index: -1;
+    right: 0px;
+    border-radius: 100% 0 0 0; 
+    transform: rotate(0deg); 
+}
+
+.blue-background{
+    background-color: var(--button-color);
+    height: 200px;
+}
+
+.footer {
+    background-color: var(--button-color);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    color: white;
+}
+
+.container{
+    margin-bottom: 5rem !important;
+}
+
+.table-primary-color{
+    background-color: var(--geometric-forms-color) !important;
+}
+
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+@media (max-width:1400px){
+    .circle{
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 998px){
+    .footer{
+        position:fixed;
+        left:0px;
+        bottom:0px;
+        height:30px;
+        width:100%;
+    }
+}
+

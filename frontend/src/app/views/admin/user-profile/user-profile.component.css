@@ -1,0 +1,12 @@
+.image-size{
+    display: none;
+}
+
+@media screen and (max-width:720px){
+    .image-size{
+        display: flex;
+        width: 30%;
+        height: auto;
+        justify-content: start;
+    }
+}

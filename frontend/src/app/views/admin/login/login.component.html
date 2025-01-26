@@ -1,0 +1,30 @@
+<div class="circle"></div>
+<div class="circle2">  </div>
+
+<section class="container form-width">
+    <div class="bg-white mt-5 shadow rounded-4 pt-5 w-xl-100">
+        <div class="d-flex justify-content-center">
+            <h1 class="fw-bold text-center">
+                Actividades<br>
+                Paraescolares</h1>
+        </div>
+        <form class="form-singin d-flex justify-content-center mt-3" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group form-width-input  margin fw-semibold pb-5">
+                <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                    {{errorMessage}}
+                </div>
+                <div *ngIf="warningMessage" class="alert alert-warning" role="alert">
+                    {{ warningMessage }}
+                </div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="form-control mb-4 border-color-primary" placeholder="email@gmail.com" formControlName="email">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" class="form-control mb-4 border-color-primary" placeholder="********************" formControlName="password">
+                <button class="button-color-primary py-2 px-3 w-100 mt-4" type="submit">Loguearse</button>
+                <p class="mx-3 mt-3 fw-bold text-center">OR</p>
+                <button class="button-color-primary py-2 px-3 w-100" [routerLink]="['/register']">Registrarse</button>
+            </div>
+            
+        </form>
+    </div>
+</section>

@@ -1,0 +1,39 @@
+<div class="circle"></div>
+<div class="circle2"></div>
+
+<section class="container form-width">
+    <div class="bg-white mt-5 shadow rounded-4 pt-5">
+        <div class="d-flex justify-content-center">
+            <h1 class="fw-bold text-center">
+                Actividades<br>
+                Paraescolares</h1>
+        </div>
+        <form class="form-singin d-flex justify-content-center mt-3" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group form-width-input  margin fw-semibold pb-5">
+                <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+                    {{errorMessage}}
+                </div>
+                <div *ngIf="warningMessage" class="alert alert-warning" role="alert">
+                    {{ warningMessage }}
+                </div>
+                <label for="name">Username:</label>
+                <input type="text" id="name" class="form-control mb-4 border-color-primary" placeholder="username" formControlName="name">
+                <label for="email">Email:</label>
+                <input type="email" id="email" class="form-control mb-4 border-color-primary" placeholder="email@gmail.com" formControlName="email">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" class="form-control mb-4 border-color-primary" placeholder="********************" formControlName="password">
+                <label>Confirma la contraseña:</label>
+                <input type="password" id="password-confirmation" class="form-control mb-4 border-color-primary" placeholder="********************" formControlName="password_confirmation">
+                <div class="d-flex align-items-center mt-4 pb-4">
+                    <button class="button-color-primary py-3 px-3 w-50" type="submit">Registrarse</button>
+                    <p class="mx-3 mt-1 fw-bold">OR</p>
+                    <button class="button-color-primary py-3 px-3 w-50" [routerLink]="['/login']">Loguearse</button>
+                </div>
+
+
+                
+            </div>
+            
+        </form>
+    </div>
+</section>

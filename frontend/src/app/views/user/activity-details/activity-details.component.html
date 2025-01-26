@@ -1,0 +1,81 @@
+
+<div class="container">
+    <img class="w-100 img-fluid rounded-4 shadow height-img mt-4" [src]="getImageUrl(activity.imagenActividad)" alt="{{ activity.titulo }}">
+        <div class="d-flex tag-width ">
+            @for (category of categories; track category.id){
+                <div class="tag w-25 tag-width d-flex mt-2 mt-sm-3 mt-md-5 me-4 align-items-center justify-content-center pt-3 "> 
+                        <p>{{category.nombre}}</p> 
+                </div>
+            }
+        </div>
+    
+ 
+    
+ 
+
+    <div class="d-flex flex-column flex-lg-row mt-5 w-100 w-md-75 mx-sm-2">
+        <div class="me-3 text-align-justify w-100 w-md-50">
+            <h3 class="fw-semibold">{{activity.titulo}}</h3>
+            <p class="text-align-justify">{{activity.descripcion}}</p>
+            <p class="text-align-justify">El <strong>horario</strong> es el {{activity.horario}}. Os estaremos esperando
+            a la entrada del colegio para hacer recuento de alumnos inscritos. El <strong>precio</strong> de la cuota son {{activity.cuota}} euros 
+            por la entrada, vestimenta y demás útiles.</p>
+            <p class="text-align-justify">Actividad realizada para aquellos alumnos que estén en la etapa de <strong>{{activity.etapaEducativa}}</strong>,
+                no nos hacemos cargo de niñs con una etapa mayor ni menor. ¡No dudéis en inscribiros!.
+            </p>
+        </div>
+
+        <!-- Formulario para inscribirse a las actividades -->
+        <div class="w-100 w-md-50 shadow rounded-4 mt-sm-5">
+            <div class="bg-white rounded-4 pb-5 w-100">
+                <div class="d-flex align-items-center mx-5 pt-5">
+                    <img src="assets/images/icon.png" alt="Actividades-Paraescolares-Icono">
+                    <h3 class="fw-semibold ms-3">¡Inscríbete!</h3>
+                </div>
+                
+                <form [formGroup]="matriculateForm" (ngSubmit)="matriculateActivity($event)" enctype="multipart/form-data"> 
+                    <div *ngIf="errorMessage" class="alert alert-danger mx-5 mt-3" role="alert">
+                        {{errorMessage}}
+                    </div>
+                    <div *ngIf="successMessage" class="alert alert-success mx-5 mt-3" role="alert">
+                        {{successMessage}}
+                    </div>
+                    <div class="d-flex flex-column flex-md-row">
+                        <div class="mt-3 ms-5 border-color-primary rounded-1 w-75 w-md-50">
+                            <input type="text" id="nombreAdultoResponsable" class="form-control pt-3 ellipsis" placeholder="Nombre del responsable*" maxlength="30" formControlName="nombreAdultoResponsable">
+                        </div>
+            
+                        <div class="mt-3 ms-5 me-3 me-md-5 border-color-primary rounded-1 w-75 w-md-50">
+                            <input type="text" id="apellidoAdultoResponsable" class="form-control pt-3 ellipsis" placeholder="Apellido del responsable*" maxlength="30" formControlName="apellidoAdultoResponsable">
+                        </div>
+                    </div>
+            
+                    <div class="d-flex flex-column flex-md-row ">
+                        <div class="mt-3 ms-5 border-color-primary rounded-1 w-75 w-md-50">
+                            <input type="tel" id="telefonoAdultoResponsable" class="form-control pt-3 ellipsis" placeholder="Teléfono del responsable*" maxlength="30" formControlName="telefonoAdultoResponsable">
+                        </div>
+            
+                        <div class="mt-3 ms-5 me-3 me-md-5 border-color-primary rounded-1 w-75 w-md-50">
+                            <input type="email" id="emailAdultoResponsable" class="form-control pt-3 ellipsis" placeholder="Email del responsable*" maxlength="30" formControlName="emailAdultoResponsable">
+                        </div>
+                    </div>
+            
+                    <div class="d-flex flex-column flex-md-row">
+                        <div class="mt-3 ms-5 border-color-primary rounded-1 w-75 w-md-50 ">
+                            <input type="text" id="nombre" class="form-control pt-3 ellipsis" placeholder="Nombre del hijo*" maxlength="30" formControlName="nombre">
+                        </div>
+            
+                        <div class="mt-3 ms-5 me-3 me-md-5 border-color-primary rounded-1 w-75 w-md-50">
+                            <input type="text" id="apellidos" class="form-control pt-3 ellipsis" placeholder="Apellido del hijo*" maxlength="30" formControlName="apellidos">
+                        </div>
+                    </div>
+                    <div class="mt-3 ms-5 me-3 me-md-5 button-width w-md-50">
+                        <button type="submit" class="button-color-primary button-width">Solicitar inscripción</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+    
+</div>

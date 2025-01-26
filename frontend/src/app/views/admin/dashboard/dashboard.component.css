@@ -1,0 +1,22 @@
+.margin{
+    margin-top: 3rem;
+}
+
+.padding{
+    padding: 5rem 3rem;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+@media screen and (max-width:768px) {
+    .margin{
+        margin-top: 1rem;
+    }
+
+    .margin-first{
+        margin-top:4rem;
+    }
+}

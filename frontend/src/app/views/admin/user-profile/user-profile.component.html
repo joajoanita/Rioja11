@@ -1,0 +1,55 @@
+
+<!-- <div class="container mt-3">
+    <div class="card inner-main">
+      <div class="card-header">
+        Tu cuenta
+      </div>
+      <div class="card-body">
+        <p class="card-text">Nombre: {{UserProfile.name}}</p>
+        <p class="card-text">Email: {{UserProfile.email}}</p>
+        <p class="card-text">Rol: {{UserProfile.privilege}}</p>
+        <label>Añade una foto:</label>
+        <input type="file" id="file" class="form-control mb-4" formControlName="image">
+      </div>
+    </div>
+  </div> -->
+  
+  <!-- Panel de información de usuario -->
+  <section>
+    <div class="container mt-4 d-xl-flex flex-column">
+      <div class="d-flex justify-content-between my-4 mx-2 ">
+        <a href="/dashboard"><img src="assets/images/atras.png" alt="atras-icono" class="image-size"></a>
+      </div>
+      <div class="bg-white rounded-4 py-4 flex-column mx-2 w-xl-25 ">
+          <div class="w-100" >
+            <div class="d-flex">
+              <div class="d-flex flex-column align-items-center"  >
+                @if(user.userImage){
+                    <img [src]="getImageUrl(user.userImage)" alt="{{user.userImage}}" class="w-75 ">
+                }
+              </div>
+            </div>
+            <div class="my-2 text-bold text-font mx-4">
+         
+              <p>{{user.name}}</p>
+              <p>{{user.email}}</p>
+            
+              <button class="button-color-primary w-100" [routerLink]="['/editUsers', user.id]">Editar perfil</button>
+              <button class="button-color-secondary w-100 mt-3" (click)="signOut()">Cerrar la cuenta</button>
+            </div>
+          </div>
+        </div>
+        <!-- últimas actividades -->
+       <div class="bg-white rounded-4 flex-column align-items-center mx-2 w-xl-75"   >
+          <h1 class="fw-semibold mt-5 mx-5 pt-4">Últimas actividades</h1>
+          <div *ngFor="let activity of activities.slice(0,5)" class="mx-5 mt-2">
+            <div class="bg-white rounded-4 py-2 mx-2 w-50 fs-5">
+              <p>{{activity.titulo}}</p>
+            </div>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  
+  

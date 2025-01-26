@@ -1,0 +1,37 @@
+.icon{
+    width: 25px;
+    height: 25px;
+}
+
+.imagen-size{
+    width: 85%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+@media screen and (max-width:1400px){
+    .imagen-size{
+        width: 105%;
+    }
+}
+
+@media (max-width:1199px){
+    .imagen-size{
+        width: 90%;
+    }
+}
+
+@media (max-width:998px){
+    .imagen-size{
+        width: 86%;
+    }
+}
+
+@media (max-width:768px){
+    .imagen-size{
+        width: 82%;
+    }
+}
+
+

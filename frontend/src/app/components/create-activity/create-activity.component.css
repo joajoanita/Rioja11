@@ -1,0 +1,17 @@
+.form-width{
+    width: 40%;
+}
+
+.form-width-input{
+    width: 60%;
+}
+
+@media (max-width:1200px){
+    .form-width{
+     width: 100%;
+    }
+ }
+ 
+ 
+ 
+ 
